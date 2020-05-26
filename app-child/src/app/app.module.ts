@@ -3,16 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {APP_BASE_HREF} from '@angular/common';
+import {EmptyRouteComponent} from './empty-route/empty-route.component';
+import { PageChildComponent } from './page-child/page-child.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmptyRouteComponent,
+    PageChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
